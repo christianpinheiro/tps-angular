@@ -1,0 +1,38 @@
+<div class="container-fluid">
+  <h1>Juros Simples</h1>
+  <p>Digite o valor desejado para o cálculo:</p>
+
+  <input type="number" min="0" [(ngModel)]="capit" />
+  <hr />
+  <p>Digite a taxa de juros em %:</p>
+  <input type="number" min="0" [(ngModel)]="taxa" />
+  <hr />
+  <p>Digite o tempo em meses:</p>
+  <input type="number" min="1" value="0" [(ngModel)]="tempo" />
+
+  <hr />
+  <table class="table">
+    <thead>
+      <tr>
+        <th>Capital</th>
+        <th>Taxa(%)</th>
+        <th>Tempo (meses)</th>
+        <th>Juros</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let item of getCapitalList(); index as i">
+        <td>
+          {{getCapital()}}
+        </td>
+        <td>{{getTaxa()}}</td>
+        <td>{{getTempo()}}</td>
+        <td>{{getResult().toFixed(2)}}</td>
+      </tr>
+    </tbody>
+  </table>
+  <div>
+    O valor do juros é de R${{getResult()}} e o acumulado é de R${{getCapital()
+    ++ getResult().toFixed(2)}}.
+  </div>
+</div>

@@ -1,0 +1,6 @@
+<div class="container-fluid">
+  <h1>Verificar se o número escolhido é par ou ímpar.</h1>
+  <input type = "number" step = "1" [(ngModel)] = "n"/>
+  <div *ngIf="getPar()== true">O número é Par.</div>
+  <div *ngIf="getImpar()== true">O número é ímpar.</div>
+</div>

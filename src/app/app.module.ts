@@ -12,6 +12,7 @@ import { RouterModule } from '@angular/router';
 import { JurossimplesComponent } from './jurossimples/jurossimples.component';
 import { JuroscompostosComponent } from './juroscompostos/juroscompostos.component';
 import { PerfilComponent } from './perfil/perfil.component';
+import { TimerService } from './timer.service';
 
 @NgModule({
   imports:      [ BrowserModule, FormsModule, RouterModule.forRoot([
@@ -24,6 +25,7 @@ import { PerfilComponent } from './perfil/perfil.component';
     ])    
   ],
   declarations: [ AppComponent, HelloComponent, NavbarComponent, CalcComponent, TabuadaComponent, HomeComponent, JurossimplesComponent, JuroscompostosComponent, PerfilComponent ],
-  bootstrap:    [ AppComponent ]
+  bootstrap:    [ AppComponent ],
+  providers: [TimerService]
 })
 export class AppModule { }

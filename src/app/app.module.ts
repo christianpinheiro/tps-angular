@@ -13,6 +13,8 @@ import { JurossimplesComponent } from './jurossimples/jurossimples.component';
 import { JuroscompostosComponent } from './juroscompostos/juroscompostos.component';
 import { PerfilComponent } from './perfil/perfil.component';
 import { TimerService } from './timer.service';
+import { TasksService } from './tasks.service';
+import { TasksComponent } from './tasks/tasks.component';
 
 @NgModule({
   imports:      [ BrowserModule, FormsModule, RouterModule.forRoot([
@@ -21,11 +23,12 @@ import { TimerService } from './timer.service';
     {path: 'calc', component: CalcComponent},
     {path: 'tabuada', component: TabuadaComponent},
     {path: 'jurossimples', component: JurossimplesComponent},
-    {path: 'juroscompostos', component: JuroscompostosComponent}
+    {path: 'juroscompostos', component: JuroscompostosComponent},
+    {path: 'tasks', component: TasksComponent}
     ])    
   ],
-  declarations: [ AppComponent, HelloComponent, NavbarComponent, CalcComponent, TabuadaComponent, HomeComponent, JurossimplesComponent, JuroscompostosComponent, PerfilComponent ],
+  declarations: [ AppComponent, HelloComponent, NavbarComponent, CalcComponent, TabuadaComponent, HomeComponent, JurossimplesComponent, JuroscompostosComponent, PerfilComponent, TasksComponent ],
   bootstrap:    [ AppComponent ],
-  providers: [TimerService]
+  providers: [TimerService, TasksService]
 })
 export class AppModule { }

@@ -13,3 +13,4 @@ export class AppComponent {
     this.timer.start(1000);
   }
 }
+

@@ -1,0 +1,37 @@
+<div class="container-fluid">
+
+  <h1>BitCoin</h1>
+  <button (click)="updateBitCoinRates()">Atualizar</button>
+  <button (click)="BitCoinClear()">Limpar</button>
+
+  <div>
+    <div *ngIf="bitcoinService.currentResponse">
+      <b>
+        {{bitcoinService.currentResponse.time.updated}}
+      </b>
+    </div>
+    <div *ngIf="bitcoinService.currentResponse">
+      <span [innerHTML] = "bitcoinService.currentResponse.bpi.USD.symbol"></span>
+      {{bitcoinService.currentResponse.bpi.USD.rate}}
+    </div>
+    <div *ngIf="bitcoinService.currentResponse">
+      <span [innerHTML] = "bitcoinService.currentResponse.bpi.USD.symbol"></span>
+      {{bitcoinService.currentResponse.bpi.EUR.rate}}
+    </div>
+
+    <table class="table">
+    <thead>
+      <tr>
+        <th>Data/Hora</th>
+        <th>Taxa USD</th>
+        <th>Taxa EUR</th>
+      </tr>
+      <tr *ngFor = "let response of this.bitcoinService.updateList">
+        <td>{{response.time.updated}}</td>
+        <td>{{response.bpi.USD.rate}}</td>
+        <td>{{response.bpi.EUR.rate}}</td>
+      </tr>
+    </thead>
+  </table>    
+  
+</div>

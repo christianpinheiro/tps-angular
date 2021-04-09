@@ -15,20 +15,25 @@ import { PerfilComponent } from './perfil/perfil.component';
 import { TimerService } from './timer.service';
 import { TasksService } from './tasks.service';
 import { TasksComponent } from './tasks/tasks.component';
+import { BitcoinService } from './bitcoin.service';
+import { BitcoinComponent } from './bitcoin/bitcoin.component';
+import { HttpClientModule } from '@angular/common/http';
+
 
 @NgModule({
-  imports:      [ BrowserModule, FormsModule, RouterModule.forRoot([
+  imports:      [ BrowserModule, FormsModule, HttpClientModule, RouterModule.forRoot([
     {path: '', component: HomeComponent},
     {path: 'perfil', component: PerfilComponent},
     {path: 'calc', component: CalcComponent},
     {path: 'tabuada', component: TabuadaComponent},
     {path: 'jurossimples', component: JurossimplesComponent},
     {path: 'juroscompostos', component: JuroscompostosComponent},
-    {path: 'tasks', component: TasksComponent}
+    {path: 'tasks', component: TasksComponent},
+    {path: 'bitcoin', component: BitcoinComponent}
     ])    
   ],
-  declarations: [ AppComponent, HelloComponent, NavbarComponent, CalcComponent, TabuadaComponent, HomeComponent, JurossimplesComponent, JuroscompostosComponent, PerfilComponent, TasksComponent ],
+  declarations: [ AppComponent, HelloComponent, NavbarComponent, CalcComponent, TabuadaComponent, HomeComponent, JurossimplesComponent, JuroscompostosComponent, PerfilComponent, TasksComponent, BitcoinComponent ],
   bootstrap:    [ AppComponent ],
-  providers: [TimerService, TasksService]
+  providers: [TimerService, TasksService, BitcoinService]
 })
 export class AppModule { }
